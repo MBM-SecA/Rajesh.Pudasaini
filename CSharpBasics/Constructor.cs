@@ -28,7 +28,7 @@ namespace AllAboutClasses {
 
     public class Demo {
 
-        static void Main(){
+        static void DemoMain(){
             Country country1 = new Country();//call the constructor without argument
             Country country2 = new Country(); //call the constructor with argument
 

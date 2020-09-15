@@ -61,7 +61,7 @@ class MethodTeacher {
 
 class MethodTester{
 
-    static void Main(){
+    static void Main5(){
         int[] num = {1, 2, 3, 4, 5, 6}; 
         int[] numbers = new int[] {22, 24, 16};
         MethodTeacher obj1 = new MethodTeacher();
