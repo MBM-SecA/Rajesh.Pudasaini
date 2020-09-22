@@ -2,7 +2,7 @@
 
 using System;
 class Assignment1 {
-    static void Main(){
+    static void Main2(){
         Console.WriteLine("\n\n\n\n#######-------Executing Assignment 1-------#######");
         //executing ques1
         CheckSum obj1 = new CheckSum();
