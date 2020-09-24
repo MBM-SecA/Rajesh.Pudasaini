@@ -3,7 +3,7 @@ using System;
 
 class MeanModeMedian {
 
-        static void Main(){
+        static void MainTest(){
             MeanModeMedian obj1 = new MeanModeMedian();
             obj1.Calculate(1, 2, 3, 4, 5, 6);
         }
