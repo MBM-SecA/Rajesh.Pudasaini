@@ -32,7 +32,7 @@ public class Country {
                     Population = 300000,
                 };
             
-            Country c2 = new Country("China", "Asia", 1234563237.78, 3000000);
+            Country c2 = new Country("China", "Asia", 1234563237.78, 3000000, DateTime.Parse("1997/08/21"));
             Country c3 = new Country("India", "Asia", 123456327.78, 4000000, new DateTime(1947, 08, 15));
             Country c4 = new Country("Sri Lanka", "Asia", 1234563327.78, 5000000);
             Country c5 = new Country("France", "Europe", 12343232567.78, 6000000);
