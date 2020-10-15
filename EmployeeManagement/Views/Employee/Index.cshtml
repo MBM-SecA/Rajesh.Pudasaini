@@ -6,7 +6,11 @@
 <h1>All Employee (@Model.Count)</h1>
 <table class="table table-striped">
   <thead>
+    <a asp-controller="Employee" asp-action="Add"><button class="btn btn-primary">
+      Add New
+    </button></a>
     <tr>
+      <th scope="col">ID</th>
       <th scope="col">First Name</th>
       <th scope="col">Last Name</th>
       <th scope="col">Gender</th>
@@ -15,10 +19,20 @@
     </tr>
   </thead>
   <tbody>
+      @{int i=1;}
       @foreach (var person in Model )
       {
+        
        <tr scope="row">
-            <td><a href="/employee/detail?firstName=@person.FirstName">@person.FirstName</a></td>
+          <td>
+            @(i++)
+          </td>
+            <td>
+              @{
+                  string employeeFirstName = person.FirstName;
+              }
+              <a href="/employee/detail?id=@person.Id">@employeeFirstName</a>
+              </td>
             <td>@person.LastName</td>
             <td>@person.Gender</td>
             <td>@person.Address</td>

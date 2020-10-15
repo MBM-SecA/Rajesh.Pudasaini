@@ -1,13 +1,15 @@
 @model Person 
 @{
-    ViewData["Title"] = "Person";
+    var personFirstName = Model.FirstName;
+    ViewData["Title"] = personFirstName;
 }
 
+<a href="/employee" class="float-left flex align-items">Go Back</a>
 <h1>Employee Detail</h1>
 <hr>
 <div class="card">
     <div class="card-header bg-light">
-        <h4>Name: @Model.FirstName @Model.LastName</h4>
+        <h4>Name: @personFirstName @Model.LastName</h4>
     </div>
     <div class="card-body">
         <p>Gender: @Model.Gender</p>
