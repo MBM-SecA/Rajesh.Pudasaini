@@ -1,5 +1,41 @@
+@model Person;
 @{
-    ViewData["Title"] = "Add New";
+    ViewData["Title"] = "Add Employee";
 }
 
-<h1>Add New Employee</h1>
+<h3>Add New Employee</h3>
+
+<form asp-controller="Employee" asp-action="Add" method="POST">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label asp-for="FirstName"></label>
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+            <input type="text" class="form-control" asp-for="FirstName" placeholder="First Name" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="LastName"></label>
+            <span class="text-danger" asp-validation-for="LastName"></span>
+            <input type="text" class="form-control" asp-for="LastName" placeholder="Last Name" required>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label asp-for="Gender"></label>
+            <select name="" asp-for="Gender" class="form-control">
+                <option value="m">Male</option>
+                <option value="f">Female</option>
+            </select>
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="Contact"></label>
+            <input type="number" class="form-control" asp-for="Contact" placeholder="Contact Number">
+        </div>
+    </div>
+    
+        <div class="form-group">
+            <label asp-for="Address"></label>
+            <input type="text" class="form-control" placeholder="Address" asp-for="Address">
+        </div>
+        
+    <button type="submit" class="btn btn-primary">Save Employee</button>
+</form>
