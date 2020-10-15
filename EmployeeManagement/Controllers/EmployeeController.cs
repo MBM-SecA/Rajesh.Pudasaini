@@ -42,5 +42,11 @@ public class EmployeeController: Controller
     public ActionResult Add(){
         return View();
     }
+
+    [HttpPost]
+    public ActionResult<string> Add(Person person){
+
+        return "Record Saved";
+    }
 }
 
