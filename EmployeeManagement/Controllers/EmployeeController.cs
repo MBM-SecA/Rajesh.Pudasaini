@@ -45,7 +45,6 @@ public class EmployeeController: Controller
 
     [HttpPost]
     public ActionResult<string> Add(Person person){
-
         return "Record Saved";
     }
 }
