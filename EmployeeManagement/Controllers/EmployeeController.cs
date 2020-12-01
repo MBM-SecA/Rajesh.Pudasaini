@@ -7,10 +7,17 @@ using System.Linq;
 public class EmployeeController: Controller 
 {
 
-    public List<Person> persons = Person.GetEmployee();
+    private readonly EMSContext db;
+    public EmployeeController(EMSContext _db){
+        //construction injection
+        db = _db;
+    }
+
+    // public List<Person> persons = Person.GetEmployee();
 
     //listing employee list
     public ActionResult Index() {
+        var persons = db.People.ToList();
         // var persons = Person.GetEmployee();
         return View(persons);
     }
@@ -31,7 +38,7 @@ public class EmployeeController: Controller
         // }
         // return View();
        
-        var p1 = from person in persons
+        var p1 = from person in db.People
                      where person.Id == id
                      select person;
 
@@ -45,7 +52,9 @@ public class EmployeeController: Controller
 
     [HttpPost]
     public ActionResult<string> Add(Person person){
-        return "Record Saved";
+        db.People.Add(person);
+        db.SaveChanges();
+        return Redirect("/employee");
     }
 }
 
