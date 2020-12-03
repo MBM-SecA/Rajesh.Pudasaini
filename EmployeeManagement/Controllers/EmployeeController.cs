@@ -38,23 +38,57 @@ public class EmployeeController: Controller
         // }
         // return View();
        
-        var p1 = from person in db.People
-                     where person.Id == id
-                     select person;
+        // var p1 = from person in db.People
+        //              where person.Id == id
+        //              select person;
 
-        return View(p1.FirstOrDefault());
+        var p1 = db.People.Find(id);
+
+        // return View(p1.FirstOrDefault());
+        return View(p1);
     }
 
-    //view to add employee
+    //view to add employee default is HTTPGET
     public ActionResult Add(){
         return View();
     }
 
     [HttpPost]
-    public ActionResult<string> Add(Person person){
+    public ActionResult Add(Person person){
         db.People.Add(person);
         db.SaveChanges();
-        return Redirect("/employee");
+        // return Redirect("/employee");
+        return RedirectToAction(nameof(Index));
+    }
+
+    public ActionResult Update(int id){
+
+        var person = db.People.Find(id);
+        return View(person);
+    }
+
+    [HttpPost]
+    public ActionResult Update(Person person){
+        
+        db.People.Attach(person);
+        db.People.Update(person);
+        db.SaveChanges();
+        return RedirectToAction(nameof(Index));
+    }
+
+
+    public ActionResult Delete(int id){
+
+        var person = db.People.Find(id);
+        return View(person);
+    }
+
+    [HttpPost]
+    public ActionResult Delete(Person person){
+        db.People.Attach(person);
+        db.People.Remove(person);
+        db.SaveChanges();
+        return RedirectToAction(nameof(Index));
     }
 }
 

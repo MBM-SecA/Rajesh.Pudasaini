@@ -16,6 +16,7 @@
       <th scope="col">Gender</th>
       <th scope="col">Address</th>
       <th scope="col">Contact</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -37,6 +38,9 @@
             <td>@person.Gender</td>
             <td>@person.Address</td>
             <td>@person.Contact</td>
+            <td><a href="/Employee/Update?id=@person.Id" class="btn btn-sm btn-primary">Edit</a></td>
+            <td><a href="/Employee/Delete?id=@person.Id" class="btn btn-sm btn-danger">Delete</a></td>
+
         </tr>   
       }
     
