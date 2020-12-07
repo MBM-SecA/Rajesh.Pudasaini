@@ -22,7 +22,6 @@ public class Person {
     [Display(Name = "First Name")]
     public string FirstName {get; set;}
 
-    [Required(ErrorMessage = "Last Name Required")]
     [Display(Name = "Last Name")]
     public string LastName {get; set;}
 

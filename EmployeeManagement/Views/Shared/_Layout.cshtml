@@ -28,7 +28,18 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item" asp-controller="Employee" asp-action="Index">List Employee</a>
+                                <a class="dropdown-item" asp-controller="Department" asp-action="Index">List Department</a>
                                 <a class="dropdown-item" asp-controller="Employee" asp-action="Add">Add Employee</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Department
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" asp-controller="Department" asp-action="Index">List Department</a>
+                                <a class="dropdown-item" asp-controller="Department" asp-action="Add">Add Employee</a>
                             </div>
                         </li>
                         <li class="nav-item">
