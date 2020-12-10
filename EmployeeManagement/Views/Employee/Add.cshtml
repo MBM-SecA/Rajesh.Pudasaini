@@ -5,11 +5,24 @@
 
 @{
     string[] genders = {"Male", "Female", "others"};
+    List<Department> depOptions = ViewData["DepartmentOptions"] as List<Department>;
+
 }
 
 <h3>Add New Employee</h3>
 
 <form asp-controller="Employee" asp-action="Add" method="POST">
+    <div class="form-row">
+        <div class="form-group">
+            <select asp-for="DepartmentId">
+                <option value="">Select Department</option>
+                @foreach (var dep in depOptions)
+                {
+                    <option value="@dep.Id">@dep.Name</option>
+                }
+            </select>
+        </div>
+    </div>
     <div class="form-row">
         <div class="form-group col-md-6">
             <label asp-for="FirstName"></label>
