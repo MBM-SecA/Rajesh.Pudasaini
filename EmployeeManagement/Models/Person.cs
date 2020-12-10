@@ -40,4 +40,7 @@ public class Person {
     //     List<Person> persons = new List<Person>{p1, p2, p3, p4, p5};
     //     return persons;
     // }
+
+    public Department Department { get; set; }
+    public int DepartmentId { get; set;}
 }
