@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ public class EmployeeController: Controller
 
     //listing employee list
     public ActionResult Index() {
-        var persons = db.People.ToList();
+        var persons = db.People.Include(x => x.Department).ToList();
         // var persons = Person.GetEmployee();
         return View(persons);
     }
@@ -50,6 +51,8 @@ public class EmployeeController: Controller
 
     //view to add employee default is HTTPGET
     public ActionResult Add(){
+        var departments = db.Department.ToList();
+        ViewData["DepartmentOptions"] = departments; 
         return View();
     }
 

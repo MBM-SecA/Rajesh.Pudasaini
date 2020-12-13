@@ -19,6 +19,13 @@ public class DepartmentController: Controller
         return View(departments);
     }
 
+    public ActionResult Detail(int id){
+        
+
+        var p1 = db.Department.Find(id);
+        return View(p1);
+    }
+
     public ActionResult Add(){
         return View();
     }
