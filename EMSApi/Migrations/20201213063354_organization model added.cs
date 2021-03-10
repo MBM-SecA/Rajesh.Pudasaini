@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace EMSApi.Migrations
 {
-    public partial class initialdb : Migration
+    public partial class organizationmodeladded : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -21,6 +21,22 @@ namespace EMSApi.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Department", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Organization",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(nullable: true),
+                    Code = table.Column<string>(nullable: true),
+                    Description = table.Column<string>(nullable: true),
+                    StartDate = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Organization", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -57,6 +73,9 @@ namespace EMSApi.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Employee");
+
+            migrationBuilder.DropTable(
+                name: "Organization");
 
             migrationBuilder.DropTable(
                 name: "Department");
